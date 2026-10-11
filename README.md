@@ -19,7 +19,7 @@ A simple packet sniffer built with Python and Scapy. It captures live IP traffic
 
 Install Scapy if needed:
 
-bash
+"bash"
 
 sudo apt update
 
@@ -28,13 +28,13 @@ sudo apt install python3-scapy -y
 
 Run the program:
 
-bash
+"bash"
 sudo python3 sniffer.py
 
 
 In a second terminal, generate some traffic:
 
-bash
+"bash"
 ping -c 10 1.1.1.1
 
 
