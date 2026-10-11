@@ -1,4 +1,3 @@
-# basic-networks-sniffer
 # Basic Network Sniffer
 
 A simple packet sniffer built with Python and Scapy. It captures live IP traffic and shows where each packet came from, where it's going, and which protocol it uses.
