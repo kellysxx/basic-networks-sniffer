@@ -19,38 +19,28 @@ A simple packet sniffer built with Python and Scapy. It captures live IP traffic
 
 Install Scapy if needed:
 
-"bash"
-
-sudo apt update
-
-sudo apt install python3-scapy -y
-
+    sudo apt update
+    sudo apt install python3-scapy -y
 
 Run the program:
 
-"bash"
-sudo python3 sniffer.py
-
+    sudo python3 sniffer.py
 
 In a second terminal, generate some traffic:
 
-"bash"
-ping -c 10 1.1.1.1
-
+    ping -c 10 1.1.1.1
 
 ## Example Output
 
-
-----------------------------------------
-Source IP: 10.0.2.15
-Destination IP: 1.1.1.1
-Protocol: ICMP
-----------------------------------------
-Source IP: 1.1.1.1
-Destination IP: 10.0.2.15
-Protocol: ICMP
-capture completed!
-
+    ----------------------------------------
+    Source IP: 10.0.2.15
+    Destination IP: 1.1.1.1
+    Protocol: ICMP
+    ----------------------------------------
+    Source IP: 1.1.1.1
+    Destination IP: 10.0.2.15
+    Protocol: ICMP
+    capture completed!
 
 ## What I Learned
 
