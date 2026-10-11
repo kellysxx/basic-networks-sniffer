@@ -21,7 +21,9 @@ A simple packet sniffer built with Python and Scapy. It captures live IP traffic
 Install Scapy if needed:
 
 bash
+
 sudo apt update
+
 sudo apt install python3-scapy -y
 
 
