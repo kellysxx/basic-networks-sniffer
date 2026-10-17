@@ -1,8 +1,8 @@
 # Basic Network Sniffer
 
-A simple packet sniffer built with Python and Scapy. It captures live IP traffic and shows where each packet came from, where it's going, and which protocol it uses.
+A beginner Python packet sniffer built with Scapy in Kali Linux. It captures a limited number of IP packets and displays their addresses, transport protocol, and a short payload preview when one is available.
 
-## Tools Used
+## Tools
 
 - Kali Linux
 - Python 3
@@ -13,46 +13,65 @@ A simple packet sniffer built with Python and Scapy. It captures live IP traffic
 
 - Captures up to 20 IP packets
 - Displays source and destination IP addresses
-- Identifies TCP, UDP, and ICMP protocols
--  Displays a short preview of packet payload bytes when available. HTTPS payloads are encrypted and are not shown as readable messages.
+- Identifies TCP, UDP, and ICMP traffic
+- Prints up to 32 bytes of packet payload when available
+- Keeps capture output in the terminal and does not save packets to a file
+
+Payload previews may contain encrypted or binary data. HTTPS traffic is encrypted, so the preview is not a readable message. Some packets do not contain an application payload.
 
 ## Evidence
 
 ![First terminal output showing captured packet details](network-sniffer-output.png)
-![second terminal output showing captured packet details](network-sniffer-output2.png)
-![third terminal view of captured packet details](network-sniffer-output3.png)
+
+![Second terminal output showing captured packet details](network-sniffer-output2.png)
+
+![Third terminal view showing packet payload previews](network-sniffer-output3.png)
 
 ## How to Run
 
-Install Scapy if needed:
+Install Scapy in Kali Linux if needed:
 
-    sudo apt update
-    sudo apt install python3-scapy -y
+```bash
+sudo apt update
+sudo apt install python3-scapy -y
+```
 
-Run the program:
+Run the sniffer:
 
-    sudo python3 sniffer.py
+```bash
+sudo python3 sniffer.py
+```
 
-In a second terminal, generate some traffic:
+To generate test traffic, open a second terminal and run:
 
-    ping -c 10 1.1.1.1
+```bash
+ping -c 10 1.1.1.1
+```
+
+The sniffer stops after capturing 20 IP packets.
 
 ## Example Output
 
-    ----------------------------------------
-    Source IP: 10.0.2.15
-    Destination IP: 1.1.1.1
-    Protocol: ICMP
-    ----------------------------------------
-    Source IP: 1.1.1.1
-    Destination IP: 10.0.2.15
-    Protocol: ICMP
-    capture completed!
+```text
+----------------------------------------
+Source IP: 10.0.2.15
+Destination IP: 1.1.1.1
+Protocol: ICMP
+Payload preview: b'...'
+----------------------------------------
+Source IP: 1.1.1.1
+Destination IP: 10.0.2.15
+Protocol: ICMP
+Payload preview: b'...'
+Capture completed.
+```
+
+Actual addresses and payload bytes depend on the traffic captured.
 
 ## What I Learned
 
-I learned how to capture network packets, identify IP addresses, and tell common network protocols apart. I also learned how to use Python to analyze traffic.
+I learned how to capture IP packets, identify source and destination addresses, distinguish common protocols, and inspect a bounded payload preview with Python and Scapy.
 
 ## Disclaimer
 
-This project is for learning purposes only. Only run it on networks you own or have permission to monitor.
+This project is for learning purposes. Only capture traffic on networks and devices you own or have permission to monitor.
