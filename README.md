@@ -14,6 +14,13 @@ A simple packet sniffer built with Python and Scapy. It captures live IP traffic
 - Captures up to 20 IP packets
 - Displays source and destination IP addresses
 - Identifies TCP, UDP, and ICMP protocols
+-  Displays a short preview of packet payload bytes when available. HTTPS payloads are encrypted and are not shown as readable messages.
+
+## Evidence
+
+![First terminal output showing captured packet details](network-sniffer-output.png)
+![second terminal output showing captured packet details](network-sniffer-output2.png)
+![third terminal view of captured packet details](network-sniffer-output3.png)
 
 ## How to Run
 
